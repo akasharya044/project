@@ -18,6 +18,8 @@ app.use(express.json());
 app.use(cors())
 
 
+
+
 const adminRoutes = require('./routes/adminRoutes')
 const facultyRoutes = require('./routes/facultyRoutes')
 const studentRoutes = require('./routes/studentRoutes')
@@ -39,6 +41,11 @@ app.get("*", function (_, res) {
         }
     );
 });
+
+app.get("/",(req , res) =>{
+res.setHeader("Access-Control-Allow-Credentials","true");
+    res.send("API is running");
+}
 
 // io.on('connection', (socket) => {
 //     socket.on('join room', ({room1, room2}) => {
