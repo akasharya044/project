@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
-import { getOTPStudent, submitOTPStudent } from '../redux/action/studentAction'
+// import { getOTPStudent, submitOTPStudent } from '../redux/action/studentAction'
 import { getOTPFaculty, submitOTPFaculty } from '../redux/action/facultyAction'
 import classnames from 'classnames'
 
@@ -52,7 +52,7 @@ const ForgotPassword = (props) => {
     const sendOTPHandler = (e) => {
         e.preventDefault()
         if (user === "student") {
-            dispatch(getOTPStudent({ email }))
+            // dispatch(getOTPStudent({ email }))
         }
         else if (user === "faculty") {
            dispatch(getOTPFaculty({email}))
@@ -62,7 +62,7 @@ const ForgotPassword = (props) => {
     const submitOTPHandler = (e) => {
         e.preventDefault()
         if (user === "student") {
-            dispatch(submitOTPStudent({ email, otp, newPassword, confirmNewPassword },history))
+            // dispatch(submitOTPStudent({ email, otp, newPassword, confirmNewPassword },history))
         }
         else if (user === "faculty")
         {

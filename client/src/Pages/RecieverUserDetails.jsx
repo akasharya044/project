@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { getStudentByRegName } from '../redux/action/studentAction'
+// import { getStudentByRegName } from '../redux/action/studentAction'
 import HomeHelper from '../Components/HomeHelper'
 
 const RecieverUserDetails = (props) => {
@@ -15,7 +15,7 @@ const RecieverUserDetails = (props) => {
 
     useEffect(() => {
         setRegistrationNumber(props.match.params.registrationNumber)
-        dispatch(getStudentByRegName(registrationNumber))
+        // dispatch(getStudentByRegName(registrationNumber))
         
     }, [registrationNumber]) 
 

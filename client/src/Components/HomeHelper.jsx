@@ -1,37 +1,31 @@
 import React, {useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { studentLogout, newerChats, previousChats} from '../redux/action/studentAction'
+import { studentLogout} from '../redux/action/studentAction'
 
 
 //update are imported here
-import PropTypes from 'prop-types';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
+
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
+
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import AccountBoxSharpIcon from '@mui/icons-material/AccountBoxSharp';
-import ProgressCircle from './ProgressCircle2';
 
-import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Unstable_Grid2';
+
+
 
 import '../Style/Home.css'
-import ProgressCircle2 from './ProgressCircle2';
 
-//updated declartion here
+
+//updated Declaration here
 const drawerWidth = 240;
 
 
@@ -47,15 +41,15 @@ const Home = (props) => {
     }, [store.student.student.student.name])
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(newerChats(store.student.student.student.name))
-        dispatch(previousChats(store.student.student.student.name))
+        // dispatch(newerChats(store.student.student.student.name))
+        // dispatch(previousChats(store.student.student.student.name))
     }, [store.student.newerChats.length])
     const logoutHandler = () => {
         dispatch(studentLogout())
         history('/')
     }
 
-    // dashbaord important imports here
+ 
 
 
     const { window } = props;
