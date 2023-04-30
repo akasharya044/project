@@ -1,7 +1,7 @@
 const express = require('express');
 const http = require('http')
 const path = require('path')
-const socket =  require('socket.io')
+// const socket =  require('socket.io')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const cors = require('cors')
@@ -12,7 +12,7 @@ dotenv.config()
 //MIDDILWARES
 const app = express();
 let server = http.createServer(app);
-let io = socket(server);
+// let io = socket(server);
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
 app.use(cors())
@@ -42,10 +42,10 @@ app.get("*", function (_, res) {
     );
 });
 
-app.get("/",(req , res) =>{
-res.setHeader("Access-Control-Allow-Credentials","true");
-    res.send("API is running");
-}
+// app.get("/",(req , res) =>{
+// res.setHeader("Access-Control-Allow-Credentials","true");
+//     res.send("API is running");
+// }
 
 // io.on('connection', (socket) => {
 //     socket.on('join room', ({room1, room2}) => {
