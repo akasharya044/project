@@ -30,15 +30,15 @@ require('./config/passport')(passport)
 
 app.use(morgan('dev'))
 
-// app.use(express.static(path.join(__dirname, "./client/build")));
-// app.get("*", function (_, res) {
-//     res.sendFile(
-//         path.join(__dirname, "./client/build/index.html"),
-//         function (err) {
-//             res.status(500).send(err);
-//         }
-//     );
-// });
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", function (_, res) {
+    res.sendFile(
+        path.join(__dirname, "./client/build/index.html"),
+        function (err) {
+            res.status(500).send(err);
+        }
+    );
+});
 
 io.on('connection', (socket) => {
     socket.on('join room', ({room1, room2}) => {
